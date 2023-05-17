@@ -7,10 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "ts-node-dev src/jobs.ts",
+    "dev": "ts-node-dev src/cac-upb.ts",
     "build": "tsc",
     "lint": "ts-standard --fix",
-    "start": "node build/jobs.js"
+    "start": "node build/cac-upb.js"
   },
   "keywords": [],
   "author": "",
