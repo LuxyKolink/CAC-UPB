@@ -46,8 +46,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+    width: 500px;
     text-align: center;
-    margin-top: 20px;
   }
 
   .index-menu-flexbox {
@@ -100,4 +101,92 @@
   .nav-flexbox > img {
     height: 40px;
     margin-right: 10px;
+  }
+
+  /* Formulario */
+
+  .form-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    resize: none;
+  }
+  
+  .form-left-group-flexbox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .form-right-group-flexbox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .form-btn-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .appointment-form {
+    display: flex;
+  }
+  
+  .form-label {
+    margin-top: 10px;
+  }
+
+  /* Cancel */
+
+  .cancel-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #success-message {
+    display: none;
+    font-size: 14px;
+    color: var(--btn-bg);
+    text-decoration: underline;
+  }
+  
+  #success-message:target {
+    display: block;
+  }
+
+  /* lista de citas */
+
+  .appointment-table {
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  td {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    border-bottom: 2px solid #ccc;
+  }
+
+  th:not(:last-child) {
+    border-right: 2px solid #ccc; /* Aplica el borde derecho a todos los th, excepto al último */
   }
