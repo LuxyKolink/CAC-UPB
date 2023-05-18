@@ -1,7 +1,7 @@
 export default interface RepositoryPort<T> {
-    getById: (id: number) => T | null
-    getAll: () => T[] | []
-    save: (entity: T) => T | null
-    update: (entity: T) => T | null
-    delete: (id: string) => boolean
+    getById: (_id: number) => Promise<T>
+    getAll: () => Promise<T[]>
+    save: (entity: T) => Promise<T>
+    update: (entity: T, _id: number) => Promise<T>
+    delete: (_id: number) => Promise<boolean>
   }

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const AppointmentModel = mongoose.model('appointment', new mongoose.Schema({
-    id: Number,
+    _id: Number,
     id_client: Number,
     description: String,
     id_type: Number,
