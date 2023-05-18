@@ -22,17 +22,17 @@
             </header>
 
             <div class="form">
-                <form class="appointment-form" action="" id="appointment-form">
+                <form class="appointment-form" action="/form" method="post" id="appointment-form">
                     <div class="form-left-group-flexbox">
 
-                        <label for="firstname" class="form-label">Nombre</label>
-                        <input type="text" id="firstname" class="form-control" name="firstname" required>
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" class="form-control" name="name" required>
 
-                        <label for="id" class="form-label">Identificación</label>
-                        <input type="text" id="id" name="id" class="form-control" required>
+                        <label for="id_client" class="form-label">Identificación</label>
+                        <input type="text" id="id_client" name="id_client" class="form-control" required>
 
-                        <label for="service-type" class="form-label">Tipo de Cita</label>
-                        <select id="service-type" name="service-type" class="form-control" required>
+                        <label for="id_type" class="form-label">Tipo de Cita</label>
+                        <select id="id_type" name="id_type" class="form-control" required>
                         <option value="claims">Reclamos</option>
                         <option value="returns">Devoluciones</option>
                         <option value="consultations">Asesoría</option>
@@ -47,25 +47,28 @@
                     </div>
                     <div class="form-right-group-flexbox">
 
-                        <label for="lastname" class="form-label">Apellido</label>
-                        <input type="text" id="lastname" name="lastname" class="form-control" required>
+                        <label for="status" class="form-label">Tipo de Cita</label>
+                        <select id="status" name="status" class="form-control" required>
+                        <option value="Normal">Normal</option>
+                        <option value="Premium">Premium</option>
+                        </select>
 
                         <label for="address" class="form-label">Dirección</label>
                         <input type="text" id="address" name="address" class="form-control" required>
 
-                        <label for="service-point" class="form-label">Lugar</label>
-                        <select id="service-point" name="service-point" class="form-control" required>
-                        <option value="option-1">Sede A</option>
-                        <option value="option-2">Sede B</option>
+                        <label for="id_service_point" class="form-label">Lugar</label>
+                        <select id="id_service_point" name="id_service_point" class="form-control" required>
+                        <option value="Sede A">Sede A</option>
+                        <option value="Sede B">Sede B</option>
                         </select>
 
                         <label for="description" class="form-label">Descripción</label>
                         <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                     </div>
+                    <div class="form-btn-flexbox">
+                        <div class="btn"><button type="submit"></button></div>
+                    </div>
              </form>
-        </div>
-        <div class="form-btn-flexbox">
-            <div class="btn"><a href="/confirm" type="submit">Enviar</a></div>
         </div>
 </body>
 </html>

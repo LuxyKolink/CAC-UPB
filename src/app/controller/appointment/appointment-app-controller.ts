@@ -10,4 +10,12 @@ export default class AppointmentAppController implements AppointmentAppControlle
     getAppointmentById = (_id: number): Promise<Appointment | null> => {
         return this.appointmentAppModel.getAppointmentById(_id)
     }
+
+    save = async (entity: Appointment): Promise<Appointment> => {
+        return this.appointmentAppModel.save(entity)
+    }
+
+    delete = async (_id: number): Promise<boolean> => {
+        return this.appointmentAppModel.delete(_id)
+    }
 }

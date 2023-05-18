@@ -1,6 +1,25 @@
-// import MongoDb from '../database/mongo.db'
+import MongoDb from '../database/mongo.db'
 import dotenv  from 'dotenv';
 import path from 'path'
+
+// Controller
+
+import { AppointmentAppControllerPort, AppointmentAppModelPort } from './app/controller/appointment/appointment-app-controller.dependency'
+import AppointmentAppController from './app/controller/appointment/appointment-app-controller';
+
+// Model
+
+import { Appointment, AppointmentRepositoryMongoAdapterPort } from './app/model/appointment/appointment-app-model.dependency'
+import AppointmentAppModel from './app/model/appointment/appointment-app-model';
+
+// Repository
+
+import AppointmentRepositoryMongoAdapter from './repository/adapter/mongo/appointment/appointment-mongo-adapter';
+
+// web app adapter
+
+import { AppointmentWebAppAdapterPort } from './web-app/adapter/appointment/appointment-web-app-adapter.dependency'
+import AppointmentWebAppAdapter from './web-app/adapter/appointment/appointment-web-app-adapter';
 
 // Router
 
@@ -22,14 +41,21 @@ import FormWebAppView from './web-app/view/form/form-web-app-view';
 import WebApp from "./web-app/web-app";
 
 
-// const db = new MongoDb()
-// db.connect()
+const db = new MongoDb()
+db.connect()
+
+const appointmentRepositoryMongoAdapter: AppointmentRepositoryMongoAdapterPort<Appointment> = new AppointmentRepositoryMongoAdapter()
+const appointmentAppModel: AppointmentAppModelPort = new AppointmentAppModel(appointmentRepositoryMongoAdapter)
+const appointmentWebAppController: AppointmentAppControllerPort = new AppointmentAppController(appointmentAppModel)
+const appointmentWebAppAdapter: AppointmentWebAppAdapterPort = new AppointmentWebAppAdapter(appointmentWebAppController)
+
+
 const indexWebAppView: IndexViewWebAppPort = new IndexWebAppView()
 const errorWebAppView: ErrorViewWebAppPort = new ErrorWebAppView()
-const appointmentWebAppView: AppointmentViewWebAppPort = new AppointmentWebAppView()
+const appointmentWebAppView: AppointmentViewWebAppPort = new AppointmentWebAppView(appointmentWebAppAdapter)
 const cancelWebAppView: CancelViewWebAppPort = new CancelWebAppView()
 const confirmWebAppView: ConfirmViewWebAppPort = new ConfirmWebAppView()
-const formWebAppView: FormViewWebAppPort = new FormWebAppView()
+const formWebAppView: FormViewWebAppPort = new FormWebAppView(appointmentWebAppAdapter)
 const router: WebAppRouterPort = new WebAppRouter(indexWebAppView, errorWebAppView, appointmentWebAppView, cancelWebAppView, confirmWebAppView, formWebAppView)
 const appointments: WebApp = new WebApp(router)
 appointments.start()

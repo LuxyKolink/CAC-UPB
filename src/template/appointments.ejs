@@ -22,7 +22,7 @@
                 </nav>
             </header>
 
-        <h2>Número de Turnos: 3</h2>
+        <h2>Número de Turnos: <%= appointments.length %></h2>
 
         <div class="appointment-table">
         <table>
@@ -39,36 +39,26 @@
               </tr>
             </thead>
             <tbody>
+              <% appointments.forEach(appointment => { %>
               <tr>
-                <td>1</td>
-                <td>Santiago</td>
-                <td>Sede A</td>
-                <td>25/05/23 10:00</td>
-                <td>Normal</td>
-                <td>Devoluciones</td>
-                <td>00:00:00</td>
-                <td>Realizada</td>
+                <td><%= appointment._id %></td>
+                <td><%= appointment.name %></td>
+                <td><%= appointment.id_service_point %></td>
+                <td><%= appointment.date %></td>
+                <td><%= appointment.status %></td>
+                <td><%= appointment.id_type %></td>
+                <td><%= appointment.time %></td>
+                <td>
+                  <% if (appointment.isExpired == true) { %>
+                    Expirada
+                  <% } else if ( appointment.isExpired == false ) { %>
+                    Realizada
+                  <% } else { %>
+                    Pendiente
+                  <% } %>
+                </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Alejandra</td>
-                <td>Sede A</td>
-                <td>25/05/23 10:00</td>
-                <td>Premium</td>
-                <td>Devoluciones</td>
-                <td>00:20:00</td>
-                <td>Pendiente</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Francisco</td>
-                <td>Sede A</td>
-                <td>25/05/23 10:00</td>
-                <td>Normal</td>
-                <td>Reclamos</td>
-                <td>01:00:00</td>
-                <td>Pendiente</td>
-              </tr>
+              <% }); %>
             </tbody>
           </table>
         </div>

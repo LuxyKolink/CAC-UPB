@@ -10,4 +10,13 @@ export default class AppointmentWebAppAdapter implements AppointmentWebAppAdapte
     getAppointmentById = (_id: number): Promise<Appointment | null> => {
         return this.appointmentAppController.getAppointmentById(_id)
     }
+
+    save = async (entity: Appointment): Promise<Appointment> => {
+        return this.appointmentAppController.save(entity)
+    }
+
+    delete = async (_id: number): Promise<boolean> => {
+        return this.appointmentAppController.delete(_id)
+    }
+
 }

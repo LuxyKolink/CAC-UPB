@@ -2,11 +2,11 @@ export default interface AppointmentRepositoryMongoEntity {
     id: number
     id_client: number
     description: string
-    id_type: number
+    id_type: string
     date: Date
     time: string
     id_service_point: number
-    status: 'Pending' | 'Completed'
+    status: string
     ticket: string
     id_bank: number
     id_company: number

@@ -1,14 +1,13 @@
 import mongoose from 'mongoose';
 
 const AppointmentModel = mongoose.model('appointment', new mongoose.Schema({
-    _id: Number,
     id_client: Number,
     description: String,
-    id_type: Number,
+    id_type: String,
     date: Date,
     time: String,
     name: String,
-    id_service_point: Number,
+    id_service_point: String,
     status: String,
     ticket: String,
     id_bank: Number,

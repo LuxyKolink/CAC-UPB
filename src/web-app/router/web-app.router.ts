@@ -20,8 +20,10 @@ export default class WebAppRouter implements WebAppRouterPort {
         this.router.get('/', this.errorViewWebApp.error.bind(this.errorViewWebApp))
         this.router.get('/appointments', this.appointmentViewWebApp.appointments.bind(this.appointmentViewWebApp))
         this.router.get('/cancel', this.cancelViewWebApp.cancel.bind(this.cancelViewWebApp))
+        
         this.router.get('/confirm', this.confirmViewWebApp.confirm.bind(this.confirmViewWebApp))
         this.router.get('/form', this.formViewWebApp.form.bind(this.formViewWebApp))
+        this.router.post('/form', this.formViewWebApp.form_submit.bind(this.formViewWebApp))
     }
 
 }
