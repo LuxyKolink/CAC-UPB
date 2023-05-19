@@ -1,6 +1,7 @@
 export default interface Appointment {
     id: number
     id_client: number
+    name: string
     description: string
     id_type: string
     date: Date

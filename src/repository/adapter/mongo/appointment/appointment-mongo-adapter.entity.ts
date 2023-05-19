@@ -1,6 +1,7 @@
 export default interface AppointmentRepositoryMongoEntity {
     id: number
     id_client: number
+    name: string
     description: string
     id_type: string
     date: Date

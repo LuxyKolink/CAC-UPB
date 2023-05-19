@@ -33,7 +33,7 @@ export default class AppointmentWebAppView implements AppointmentViewWebAppPort 
                 id_type: app.id_type,
                 date: app.date,
                 time: app.time,
-                name: app.id_client,
+                name: app.name,
                 id_service_point: app.id_service_point,
                 status: app.status,
                 isExpired
