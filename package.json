@@ -2,17 +2,21 @@
   "name": "cac-upb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/cac-upb.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev src/cac-upb.ts",
+    "build": "tsc",
+    "lint": "ts-standard --fix",
+    "start": "node build/cac-upb.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/ejs": "^3.1.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/index.css" rel="stylesheet">
+    <title>CAC-UPB</title>
+    <link rel="icon" href="../img/logo.png">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="content">
+            <header>
+                <nav>
+                    <div class="nav-flexbox">
+                        <img src="../img/logo.png" alt="">
+                        <a href="index.html"><u>Regresar</u></a>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="form">
+                <form class="appointment-form" action="" id="appointment-form">
+                    <div class="form-left-group-flexbox">
+
+                        <label for="firstname" class="form-label">Nombre</label>
+                        <input type="text" id="firstname" class="form-control" name="firstname" required>
+
+                        <label for="id" class="form-label">Identificación</label>
+                        <input type="text" id="id" name="id" class="form-control" required>
+
+                        <label for="service-type" class="form-label">Tipo de Cita</label>
+                        <select id="service-type" name="service-type" class="form-control" required>
+                        <option value="claims">Reclamos</option>
+                        <option value="returns">Devoluciones</option>
+                        <option value="consultations">Asesoría</option>
+                        </select>
+
+                        <label for="date" class="form-label">Fecha</label>
+                        <input type="date" id="date" name="date" class="form-control" required>
+
+                        <label for="time" class="form-label">Hora</label>
+                        <input type="time" id="time" name="time" class="form-control" required>
+
+                    </div>
+                    <div class="form-right-group-flexbox">
+
+                        <label for="lastname" class="form-label">Apellido</label>
+                        <input type="text" id="lastname" name="lastname" class="form-control" required>
+
+                        <label for="address" class="form-label">Dirección</label>
+                        <input type="text" id="address" name="address" class="form-control" required>
+
+                        <label for="service-point" class="form-label">Lugar</label>
+                        <select id="service-point" name="service-point" class="form-control" required>
+                        <option value="option-1">Sede A</option>
+                        <option value="option-2">Sede B</option>
+                        </select>
+
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    </div>
+             </form>
+        </div>
+        <div class="form-btn-flexbox">
+            <div class="btn"><a href="confirm.html" type="submit">Enviar</a></div>
+        </div>
+</body>
+</html>
